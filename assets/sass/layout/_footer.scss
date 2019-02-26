@@ -494,22 +494,22 @@ footer {
                 opacity: 0;
             }
         }
+    }
 
-        .count {
-            float: right;
-            margin-top: 0.5rem;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 1.25rem;
-            color: #7465ae;
-            letter-spacing: 5px;
-            opacity: 0.75;
+    .count {
+        float: right;
+        margin-top: 0.5rem;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.25rem;
+        color: #7465ae;
+        letter-spacing: 5px;
+        opacity: 0.75;
 
-            .curr {
-                color: #fff
-            }
-
+        .curr {
+            color: #fff
         }
+
     }
 
     .lightbox-open & {
@@ -517,4 +517,104 @@ footer {
         pointer-events: auto;
     }
 
+    @media only screen and (max-width: 1200px) {
+        .carousel {
+            width: 40rem;
+            height: auto;
+
+            .slick-arrow {
+                bottom: -240px;
+            }
+
+            img {
+                height: 360px;
+                object-fit: contain;
+            }
+        }
+
+        .caption {
+            width: 40rem;
+            margin-top: 4rem;
+
+            .count {
+                margin: 0;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 880px) {
+        .carousel {
+            width: 30rem;
+
+            img {
+                height: 270px;
+            }
+        }
+        
+        .caption {
+            width: 30rem;
+
+            p {
+                max-width: 30rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 720px) {
+        .carousel {
+            width: 25rem;;
+        }
+
+        .caption {
+            width: 25rem;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        .carousel {
+            width: 100%;
+
+            img {
+                height: auto;
+            }
+
+            .slick-arrow {
+                width: 5rem;
+                height: 5rem;
+                top: auto;
+                bottom: -30vh;
+
+                &:before {
+                    width: 5rem;
+                    height: 5rem;
+                }
+                
+                &.prev {
+                    left: 50%;
+                    transform: translateX(-5rem);
+                }
+                
+                &.next {
+                    right: 50%;
+                    transform: translateX(5rem);
+                }
+            }
+        }
+
+        .caption{
+            overflow: visible;
+            position: relative;
+            width: calc(100% - 4rem);
+
+            p {
+                max-width: 100%;
+            }
+
+            .count {
+                position: absolute;
+                top: -70vw;
+                right: 2rem;
+            }
+        }
+    }
 }

@@ -1737,7 +1737,7 @@ footer .copyright {
   opacity: 0;
 }
 
-.lightbox .caption .count {
+.lightbox .count {
   float: right;
   margin-top: 0.5rem;
   font-size: 14px;
@@ -1748,13 +1748,101 @@ footer .copyright {
   opacity: 0.75;
 }
 
-.lightbox .caption .count .curr {
+.lightbox .count .curr {
   color: #fff;
 }
 
 .lightbox-open .lightbox {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .lightbox .carousel {
+    width: 40rem;
+    height: auto;
+  }
+  .lightbox .carousel .slick-arrow {
+    bottom: -240px;
+  }
+  .lightbox .carousel img {
+    height: 360px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .lightbox .caption {
+    width: 40rem;
+    margin-top: 4rem;
+  }
+  .lightbox .caption .count {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .lightbox .carousel {
+    width: 30rem;
+  }
+  .lightbox .carousel img {
+    height: 270px;
+  }
+  .lightbox .caption {
+    width: 30rem;
+  }
+  .lightbox .caption p {
+    max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .lightbox .carousel {
+    width: 25rem;
+  }
+  .lightbox .caption {
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .lightbox .carousel {
+    width: 100%;
+  }
+  .lightbox .carousel img {
+    height: auto;
+  }
+  .lightbox .carousel .slick-arrow {
+    width: 5rem;
+    height: 5rem;
+    top: auto;
+    bottom: -30vh;
+  }
+  .lightbox .carousel .slick-arrow:before {
+    width: 5rem;
+    height: 5rem;
+  }
+  .lightbox .carousel .slick-arrow.prev {
+    left: 50%;
+    -webkit-transform: translateX(-5rem);
+            transform: translateX(-5rem);
+  }
+  .lightbox .carousel .slick-arrow.next {
+    right: 50%;
+    -webkit-transform: translateX(5rem);
+            transform: translateX(5rem);
+  }
+  .lightbox .caption {
+    overflow: visible;
+    position: relative;
+    width: calc(100% - 4rem);
+  }
+  .lightbox .caption p {
+    max-width: 100%;
+  }
+  .lightbox .caption .count {
+    position: absolute;
+    top: -70vw;
+    right: 2rem;
+  }
 }
 
 .hex-button {
