@@ -1,0 +1,41 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+    color: $text-color;
+    font: normal 16px / 1.4 $text-font-stack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-family: "Rationale", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #1d1d7a;
+    letter-spacing: 1.33px;
+    text-align: center;
+    line-height: 44px;
+    text-shadow: 0 2px 20px #fffbf2;
+    margin: 0 auto 2rem;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: 400;
+}
+
+p {
+    max-width: 450px;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.8rem;
+    color: #1d1d7a;
+    margin: 0 auto 1rem;
+    letter-spacing: 0;
+    text-shadow: 0 2px 20px #fffbf2;
+}

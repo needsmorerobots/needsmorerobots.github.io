@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 97 444" style="enable-background:new 0 0 97 444;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:url(#SVGID_1_);stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:url(#SVGID_2_);stroke-width:2;stroke-miterlimit:10;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-917.0638" y1="-629.1335" x2="-528.8661" y2="-629.1335" gradientTransform="matrix(6.123234e-17 1 -1 6.123234e-17 -591.5 921.5)">
+	<stop  offset="0" style="stop-color:#FF3C64"/>
+	<stop  offset="1" style="stop-color:#FF6F9E;stop-opacity:0.25"/>
+</linearGradient>
+<polyline class="st0" points="0,25.9 55.5,81.8 55.5,292.8 75,312.1 75,415.6 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-894.0772" y1="-634.8928" x2="-505.7577" y2="-634.8928" gradientTransform="matrix(6.123234e-17 1 -1 6.123234e-17 -591.5 921.5)">
+	<stop  offset="0" style="stop-color:#FF3C64"/>
+	<stop  offset="1" style="stop-color:#FF6F9E;stop-opacity:0.25"/>
+</linearGradient>
+<polyline class="st1" points="0,7.5 44.5,52.2 44.5,263 86.5,304 86.5,392.9 "/>
+</svg>

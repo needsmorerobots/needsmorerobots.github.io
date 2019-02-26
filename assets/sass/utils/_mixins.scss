@@ -1,0 +1,180 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Responsive manager
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+/// @link http://sass-guidelin.es/#breakpoint-manager Sass Guidelines - Breakpoint Manager
+@mixin respond-to($breakpoint) {
+  $query: map-get($breakpoints, $breakpoint);
+
+  @if not $query {
+    @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+
+  @media screen and #{if(type-of($query) == 'string', unquote($query), inspect($query))} {
+    @content;
+  }
+}
+
+
+@mixin grid($cols: 12) {
+  @each $col in $cols {
+    @for $i from 1 through $col {
+      .cols#{$i}of#{$col} {
+        width: percentage($i/$col) !important;
+      }
+    }
+  }
+
+  .line {
+
+    &:after {
+      clear: both;
+      content: '';
+      display: table;
+    }
+
+    .col {
+      // col must take place by default even if it's empty
+      min-height: 1px;
+      float: left;
+      zoom: 1;
+    }
+
+  }
+}
+
+@mixin gridResponsive($cols: 12, $bps: $breakpoint-values) {
+
+  $tShirtSizes: ();
+  @if (length($bps) == 1) {
+    $tShirtSizes: (md);
+  } @else if (length($bps) == 2) {
+    $tShirtSizes: (md, lg);
+  } @else if (length($bps) == 3) {
+    $tShirtSizes: (sm, md, lg);
+  } @else if (length($bps) == 4) {
+    $tShirtSizes: (sm, md, lg, xl);
+  } @else if (length($bps) == 5) {
+    $tShirtSizes: (xs, sm, md, lg, xl);
+  } @else if (length($bps) == 6) {
+    $tShirtSizes: (xs, sm, md, lg, xl, xxl);
+  } @else if (length($bps) == 7) {
+    $tShirtSizes: (xxs, xs, sm, md, lg, xl, xxl);
+  } @else if (length($bps) == 8) {
+    $tShirtSizes: (xxs, xs, sm, md, lg, xl, xxl, xxxl);
+  } @else if (length($bps) == 9) {
+    $tShirtSizes: (xxxs, xxs, xs, sm, md, lg, xl, xxl, xxxl);
+  } @else if (length($bps) > 9) {
+    $tShirtSizes: $bps;
+    @warn "T-shirt sizing doesn't work well with more than 9 breakpoints, we'll have to default to using explicit pixel values. This will make your code less maintainable.";
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  .show {
+    display: inherit !important;
+    //?? Does this work?
+  }
+
+  @for $i from 1 through length($bps) {
+    $break: nth($bps, $i);
+    $tShirtSize: nth($tShirtSizes, $i);
+    $cols: $cols;
+    // $gutterResponsive: nth($gutters, $i);
+
+  /*  For each breakpoint that we set, we create a set of classes specific to the breakpoint.
+      E.g. if we only have 1 breakpoint(20em) and not mobile first, it'll generate:
+      @media only screen and (max-width: 20em) {
+        .medHide {
+          display: none !important;
+        }
+
+        ....
+
+        .medCol1of12 {
+          ...
+        }
+      }
+  }
+  */
+  @media only screen and (min-width: $break) {
+      .#{$tShirtSize}Hide {
+        display: none !important;
+      }
+
+      .#{$tShirtSize}Show {
+        display: inherit !important;
+        //?? Does this work?
+      }
+
+    // /* grids tools (can be used on grids, media block, template) */
+      .#{$tShirtSize}Collapse > .col,
+      .#{$tShirtSize}Collapse {
+        width: auto !important;
+        display: block !important;
+        float: none !important;
+      }
+
+      .#{$tShirtSize}Expand > .col {
+        width: auto !important;
+      }
+
+      .#{$tShirtSize}DeepExpand .col {
+        width: auto !important;
+      }
+
+    //TODO: is there a way to not duplicate the code from grid.scss?
+
+      // .line {
+      //   margin-left: -$gutterResponsive;
+
+      //   .col {
+      //     padding-left: $gutterResponsive;
+      //   }
+      // }
+
+      @each $col in $cols {
+        @for $i from 1 through $col {
+          .#{$tShirtSize}Cols#{$i}of#{$col} {
+            width: percentage($i/$col) !important;
+          }
+        }
+      }
+    }
+  }
+}

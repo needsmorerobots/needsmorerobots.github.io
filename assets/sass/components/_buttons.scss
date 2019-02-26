@@ -1,0 +1,105 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+.hex-button {
+    position: relative;
+    display: inline-block;
+    margin: 40px auto;
+    filter: drop-shadow(0 2px 20px #fffbf2);
+    // shadow spread doesn't work in webkit, below rule is ignored
+    filter: drop-shadow(0 2px 20px 2px #fffbf2);
+    text-decoration: none;
+
+    &:hover {
+        .inner {
+            &:before {
+                letter-spacing: 5.5px;
+            }
+        }
+    }
+
+    .outer {
+        display: block;
+        clip-path: polygon(
+            calc(100% - 22px) 0,
+            100% 50%,
+            calc(100% - 22px) 100%,
+            22px 100%,
+            0 50%,
+            22px 0
+        );
+        background-color: #ff3c64;
+    }
+    
+    .inner {
+        width: auto;
+        height: auto;
+        padding: 14px 40px;
+        line-height: 1.4;
+        background-color: #181137;
+        clip-path: polygon(
+            calc(100% - 22px) 1.5px,
+            calc(100% - 2.5px) 50%,
+            calc(100% - 22px) calc(100% - 1.5px),
+            22px calc(100% - 1.5px),
+            2.5px 50%,
+            22px 1.5px
+        );
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        color: #181137;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-align: center;
+        white-space: nowrap;
+
+        &:before {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            text-shadow: 0 2px 20px #ff3c64;
+            color: #ff3c64;
+            transition: all 0.5s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}
+
+.btn {
+    position: relative;
+    display: block;
+    height: 48px;
+    margin: 1rem auto;
+    text-align: center;
+    color: #ff3c64;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+
+    border-image-source: url('../images/button-frame.svg');
+    border-image-slice: 50% 45% fill;
+    border-image-width: 50% 20px;
+    border-image-outset: 0;
+    border-image-repeat: repeat stretch;
+
+    &.clearbg {
+        border-image-source: url('../images/button-frame-t.svg');
+    }
+
+    span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: 0 2px 20px #ff3c64;
+        transition: all 0.5s ease;
+    }
+}

@@ -1,0 +1,520 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+footer {
+    padding: 10rem 4rem 5rem;
+    background: url('../images/bg_stars.png') repeat-x center top, url('../images/footer-bg.jpg') no-repeat center bottom / contain #0b0425;
+
+    .container {
+        position: relative;
+    }
+
+    .fiss {
+        position: absolute;
+        z-index: 0;
+        right: 0;
+        bottom: 0;
+        width: 56.25%;
+    }
+
+    .footer-top {
+        position: relative;
+        width: 500px;
+        padding: 4rem 0;
+        margin: 0 auto;
+        text-align: center;
+
+        &:before, &:after {
+            content: "";
+            display: block;
+            width: 10rem;
+            height: 1px;
+            position: absolute;
+            top: 0;
+            border: 1px solid #fff;
+            box-shadow: 0 2px 10px 0 rgba(255,255,255,0.8);
+            opacity: 0.3;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            right: 0;
+        }
+        
+        img {
+            position: absolute;
+            left: 50%;
+            top: -2.5rem;
+            transform: translateX(-50%);
+            display: block;
+            width: 5rem;
+            margin: 0 auto;
+        }
+        
+        p {
+            color: #ffddcf;
+            text-shadow: 0 2px 20px #181137;
+        }
+
+        .box {
+            width: calc(100% + 8rem);
+            padding: 2rem;
+            margin: 2.5rem 0 0 -4rem;
+            clip-path: polygon(
+                calc(100% - 75px) 0,
+                100% 50%,
+                calc(100% - 75px) 100%,
+                75px 100%,
+                0 50%,
+                75px 0
+            );
+            background-color: rgba(#ff3c64, 0.2);
+
+            p {
+                // color: #ff3c64;
+                text-shadow: 0 2px 15px #ff3c64;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            @media only screen and (max-width: 640px) {
+                width: 100%;
+                margin: 2.5rem 0 0;
+                clip-path: none;
+            }
+        }
+
+        .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            border: 1px solid #fff;
+            box-shadow: 0 2px 10px 0 rgba(255,255,255,0.8);
+            opacity: 0.3;
+
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 15vw;
+
+        .flex {
+            width: 60%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+
+        .flex-item {
+            flex: 0 1 16rem;
+            margin: 0 2rem 5rem 0;
+            white-space: nowrap;
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1rem;
+            letter-spacing: 6.5px;
+            text-transform: uppercase;
+            color: #ff3c64;
+            text-shadow: 0 2px 15px #ff3c64;
+
+            span {
+                color: #ffddcf;
+            }
+        }
+
+        .line {
+            display: inline-block;
+            position: relative;
+            width: 2.5rem;
+            height: 1px;
+            margin-right: 1rem;
+            background-color: #fffbf2;
+            border: 1px solid #fffbf2;
+            box-shadow: 0 2px 10px 0 rgba(255,255,255,0.8);
+            opacity: 0.5;
+            vertical-align: middle;
+        }
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            max-height: 4rem;
+        }
+
+        .btn-dive {
+            margin: 1rem auto 0;
+            filter: drop-shadow(0 2px 15px rgba(255,60,100,0.75));
+            // shadow spread doesn't work in webkit, below rule is ignored
+            filter: drop-shadow(0 2px 15px 0 rgba(255,60,100,0.75));
+
+            .outer {
+                clip-path: polygon(calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 20px 100%, 0 50%, 20px 0)
+            }
+
+            .inner {
+                padding: 8px 40px;
+                background-color: transparent;
+
+                img {
+                    height: 30px;
+                }
+            }
+        }
+
+        .btn-footer-subs {
+            max-width: 100%;
+            width: 30rem;
+            filter: drop-shadow(0 2px 20px rgba(255, 60, 100, 0.5));
+            filter: drop-shadow(0 2px 20px 2px rgba(255, 60, 100, 0.5));
+
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                top: 50%; transform:
+                translateY(-50%);
+                width: 0;
+                height: 0;
+                border: 6px solid #fffbf2;
+                z-index: 10;
+                transition: all 0.4s ease;
+            }
+
+            &:before {
+                left: 2rem;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+            }
+
+            &:after {
+                right: 2rem;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+
+            span {
+                color: #ffddcf;
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+            }
+
+            &:hover {
+                span {
+                    opacity: 1;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 720px) {
+            margin-top: 4rem;
+        }
+    }
+
+    .copyright {
+        position: relative;
+        top: 2rem;
+        // padding-right: 6rem;
+        font-size: 13px;
+        line-height: 2;
+        color: #ffddcf;
+        text-align: right;
+        opacity: 0.7;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .footer-bottom {
+            .flex {
+                display: block;
+
+                .flex-item {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 720px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        .fiss {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        padding-left: 4rem;
+        padding-right: 4rem;
+
+        .footer-top {
+            max-width: 100%;
+
+            &:before, &:after {
+                width: calc(50% - 40px);
+            }
+        }
+
+        .footer-bottom {
+
+            .flex {
+                width: 100%;
+            }
+
+            .flex-item {
+                max-width: 100%;
+                flex: 0 1 100%;
+                margin-right: 0;
+            }
+
+            .btn-footer-subs {
+                max-width: 100%;
+            }
+        }
+
+        .copyright {
+            padding: 0;
+            text-align: center;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        
+        .footer-bottom {
+            .flex {
+                .flex-item {
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+
+.lightbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.5s ease;
+    pointer-events: none;
+    background-color: rgba(#080614, 0.95);
+
+    .close {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 2rem;
+    }
+
+    .sides {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0.5rem;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 3.5rem;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(#ffffff, 0.8);
+        }
+
+        .side {
+            display: block;
+            padding: 0 2rem;
+            font-family: "Geo", sans-serif;
+            font-size: 1rem;
+            line-height: 2rem;
+            color: #7465ae;
+            opacity: 0.75;
+            text-shadow: 0 2px 20px rgba(#1d1d7a, 0.5);
+            transition: all 0.3s ease;
+
+            &:first-child {
+                text-align: right;
+            }
+
+            span {
+                font-size: 2rem;
+            }
+
+            &.active {
+                color: #fffbf2;
+                opacity: 1;
+            }
+        }
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        max-width: 55rem;
+        height: 31.25rem;
+        margin: 0 auto 1.25rem;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            height: 360px;
+            width: 75px;
+            background: url('../images/traceline.png') no-repeat left top / contain transparent;
+            z-index: 100;
+        }
+
+        &:before {
+            left: 85px;
+            top: -186px;
+            transform: rotate(-90deg);
+        }
+
+        &:after {
+            right: 85px;
+            bottom: -186px;
+            transform: rotate(90deg);
+        }
+        
+        img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .slick-list {
+            z-index: 10;
+            transition: all 0.3s ease;
+            opacity: 1;
+    
+            &.hidden {
+                opacity: 0;
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8rem;
+            height: 8rem;
+            
+            &:hover {
+                &:before {
+                    opacity: 0.5;
+                }
+            }
+            
+            &:before {
+                content: "";
+                width: 8rem;
+                height: 8rem;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+                background-color: #3b376d;
+                box-shadow: 0 2px 40px 0 rgba(10,0,48,0.5);
+                opacity: 0.2;
+                transition: all 0.3s ease;
+                z-index: 5;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                left: -1rem;
+                top: 50%;
+                width: 20px;
+                height: 20px;
+                background: url('../images/icon-arrow.svg') no-repeat left center / contain transparent;
+                filter: drop-shadow(0 2px 10px #ffddcf);
+            }
+            
+            &.prev {
+                left: -5.5rem;
+
+                &:after {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+            
+            &.next {
+                right: -5.5rem;
+                
+                &:after {
+                    left: auto;
+                    right: -1rem;
+                    background: url('../images/icon-arrow.svg') no-repeat left center / contain transparent;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    .caption {
+        overflow: hidden;
+        width: 100%;
+        max-width: 55rem;
+        margin: 0 auto;
+        
+        p {
+            // width: 35rem;
+            max-width: 35rem;
+            float: left;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: #ffddcf;
+            text-shadow: 0 2px 20px #181137;
+            transition: all 0.15s ease;
+            opacity: 1;
+
+            &.hidden {
+                opacity: 0;
+            }
+        }
+
+        .count {
+            float: right;
+            margin-top: 0.5rem;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.25rem;
+            color: #7465ae;
+            letter-spacing: 5px;
+            opacity: 0.75;
+
+            .curr {
+                color: #fff
+            }
+
+        }
+    }
+
+    .lightbox-open & {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+}

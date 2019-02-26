@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Neon Death Pact</title>
+    <meta name="description" content="Neon Death Pact">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Monda" rel="stylesheet"> 
+    <style>
+    html { box-sizing:border-box; }
+    * { margin:0; padding:0; }
+    *, *:before, *:after { box-sizing:inherit; }
+
+    .container { position:relative; height: 100vh; background: url('assets/images/bg-v6.jpg') no-repeat center top / cover transparent; }
+    .logo { display:block; width:75%; max-width:200px; margin:0 auto; }
+    .logo img { max-width:100%; -webkit-animation: fade 6s infinite; animation: fade 6s infinite; }
+    .description { overflow:hidden; position:absolute; top: 50%; left: 50%; transform:translate(-50%,-50%); width: 90%; max-width:600px; max-height:calc(100vh - 2rem); padding:1.5rem 1rem; background:linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%); border-radius:4px; }
+    p { font: 14px/1.5 'Monda',sans-serif; text-align:center; margin:0 auto 1rem; color:rgba(255,255,255,0.7); }
+    p span { color: #fff; }
+    @media screen and (min-width: 600px) and (min-height: 640px) {
+      .description {
+        top: auto;
+        bottom: 0;
+        transform:translateX(-50%);
+        background: none;
+      }
+      .logo { max-width:200px; padding:1rem 0 2rem; }
+    }
+    @media screen and (min-width: 1000px) {
+      .logo { padding:0; }
+    }
+    @-webkit-keyframes fade {
+      0%  { opacity: 0.2; }
+      40% { opacity: 0.5; }
+      60% { opacity: 0.5; }
+      100% { opacity: 0.2; }
+    }
+    @keyframes fade {
+      0%  { opacity: 0.2; }
+      40% { opacity: 0.5; }
+      60% { opacity: 0.5; }
+      100% { opacity: 0.2; }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="description">
+        <p><span>Neon Death Pact</span></p>
+        <p>An android affair by Needs More Robots &mdash; set in 2223, launching in 2018.</p>
+        <a href="http://needsmorerobots.com" class="logo"><img src="assets/images/nmr_logo_wc.png" alt="Needs More Robots"></a>
+      </div>
+    </div>
+  </body>
+</html>
