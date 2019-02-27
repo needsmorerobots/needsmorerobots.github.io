@@ -5,7 +5,7 @@ header {
     position: relative;
     background: url('../images/kv-texture-background.jpg') no-repeat center bottom / cover transparent;
     height: 960px;
-    overflow: hidden;
+    // overflow: hidden;
 
     &:before {
         content: "";
