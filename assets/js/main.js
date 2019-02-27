@@ -97,7 +97,8 @@
 
     var Site = function () {
         var $window = $(window),
-            $body = $("body");
+            $body = $("body"),
+            timer;
 
         // Debounce functions
         var scrollWindow = debounce(scrollControl, 250),
@@ -134,9 +135,59 @@
         function bindUI() {
             $('.btn-subscribe').on('click', function (e) {
                 e.preventDefault();
-                $(this).addClass('open');
-                $('#email').focus();
+                var $elem = $(this);
+                if (!$elem.hasClass('open')) {
+                    $elem.addClass('open');
+                    $('#email').focus();
+                }
             });
+
+            $('.btn-subscribe .inner').on('click', function () {
+                var $elem = $(this),
+                    $btn = $elem.closest('.btn-subscribe');
+                
+                if ($btn.hasClass('open')) {
+                    var $form = $elem.closest('form');
+                    if ($('#email')[0].checkValidity()) {
+                        $btn.find('.outer').removeClass('error');
+                        
+                        $.ajax({
+                            type: 'get',
+                            url: $form.attr('action'),
+                            data: $form.serialize(),
+                            cache: false,
+                            dataType: 'jsonp',
+                            jsonp: 'c',
+                            contentType: "application/json; charset=utf8",
+                            error: function (err) {
+                                console.log('something went wrong :(');
+                                console.log(err);
+                            },
+                            success: function (data) {
+                                if (data.result == 'success') {
+                                    // console.log('success!');
+                                    $form.before('<p class="ty" style="font-size:15px;font-weight:500;color:#181137;letter-spacing:0.42;position:relative;top:2rem;display:none;">Thanks! we&rsquo;ve sent you a confirmation email.</p>');
+                                    $('.ty').slideDown();
+                                    setTimeout(function () {
+                                        $('.ty').slideUp('slow');
+                                    }, 7000);
+                                } else {
+                                    if (data.msg.indexOf('already subscribed') != -1) {
+                                        $form.before('<p class="ty" style="font-size:15px;font-weight:500;color:#181137;letter-spacing:0.42;position:relative;top:2rem;display:none;">Thanks! But it looks like you&rsquo;ve already subscribed.</p>');
+                                        $('.ty').slideDown();
+                                        setTimeout(function () {
+                                            $('.ty').slideUp('slow');
+                                        }, 7000);
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        $('#email').focus();
+                        $btn.find('.outer').addClass('error');
+                    }
+                }
+            })
             
             $('.btn-footer-subs').on('click', function (e) {
                 e.preventDefault();
@@ -145,12 +196,19 @@
                     $('.btn-subscribe').trigger('click');
                     // $('#email').focus();
                 }, 1000);
-            })
+            });
 
             $('#email').on('blur', function () {
                 if ($(this).val() == '') {
-                    setTimeout(() => $('.btn-subscribe').removeClass('open'), 2000);
+                    timer = setTimeout(() => $('.btn-subscribe').removeClass('open'), 2000);
                 }
+            }).on('keydown', function () {
+                clearTimeout(timer);
+            });
+
+            $('#mc-embedded-subscribe-form').on('submit', function (e) {
+                e.preventDefault();
+                $(this).find('.inner').trigger('click');
             });
 
             $('.swap-trigger').on('click', function (e) {

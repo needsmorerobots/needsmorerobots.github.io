@@ -491,8 +491,8 @@ img {
 }
 
 body {
-  width: 100vw;
-  overflow: scroll;
+  width: 100%;
+  overflow: auto;
 }
 
 body.nav-open, body.lightbox-open {
@@ -624,7 +624,7 @@ p {
 
 header {
   position: relative;
-  background: url("../images/kv-texture-background.jpg") no-repeat center bottom/cover transparent;
+  background: url("../images/buildings.png") no-repeat center 300px/contain, url("../images/kv-texture-background.jpg") no-repeat center bottom/cover transparent;
   height: 960px;
 }
 
@@ -667,7 +667,6 @@ header .container {
       grid-template-columns: 1fr 60% 1fr;
   grid-gap: 0;
   z-index: 10;
-  background: url("../images/buildings.png") no-repeat center 300px/contain transparent;
 }
 
 header .logo {
@@ -882,10 +881,8 @@ header .buttons .btn:hover {
   header {
     height: auto;
     padding-bottom: 8rem;
-  }
-  header .container {
-    background-size: 235% auto;
-    background-position: left 500px;
+    background-size: 235% auto, cover;
+    background-position: left 500px, center bottom;
   }
   header .bldgs {
     width: 235vw;
@@ -1995,6 +1992,10 @@ footer .copyright {
 .subscribe .btn-subscribe .outer {
   overflow: hidden;
   background: #fffbf2;
+}
+
+.subscribe .btn-subscribe .outer.error {
+  background-color: rgba(255, 60, 100, 0.3);
 }
 
 .subscribe .btn-subscribe .inner {

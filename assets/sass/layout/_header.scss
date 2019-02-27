@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 header {
     position: relative;
-    background: url('../images/kv-texture-background.jpg') no-repeat center bottom / cover transparent;
+    background: url('../images/buildings.png') no-repeat center 300px / contain, url('../images/kv-texture-background.jpg') no-repeat center bottom / cover transparent;
     height: 960px;
     // overflow: hidden;
 
@@ -47,8 +47,6 @@ header {
         // flex-flow: row nowrap;
         // justify-content: space-between;;
         z-index: 10;
-
-        background: url('../images/buildings.png') no-repeat center 300px / contain transparent;
     }
 
     .logo {
@@ -277,12 +275,13 @@ header {
     @media only screen and (max-width: 640px) {
         height: auto;
         padding-bottom: 8rem;
-        // overflow: visible;
+        background-size: 235% auto, cover;
+        background-position: left 500px, center bottom;
 
-        .container {
-            background-size: 235% auto;
-            background-position: left 500px;
-        }
+        // .container {
+        //     background-size: 235% auto;
+        //     background-position: left 500px;
+        // }
 
         .bldgs {
             width: 235vw;

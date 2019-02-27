@@ -41,8 +41,8 @@ img {
 }
 
 body {
-    width: 100vw;
-    overflow: scroll;
+    width: 100%;
+    overflow: auto;
 
     &.nav-open, &.lightbox-open {
         overflow: hidden;

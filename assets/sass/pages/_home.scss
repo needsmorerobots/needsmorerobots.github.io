@@ -59,6 +59,10 @@
         .outer {
             overflow: hidden;
             background: rgba(255,251,242,1);
+
+            &.error {
+                background-color: rgba(#ff3c64, 0.3);
+            }
         }
 
         .inner {

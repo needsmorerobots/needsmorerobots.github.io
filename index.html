@@ -15,7 +15,7 @@
     
     <!-- redirect to https -->
     <script>
-        // if (location.protocol == 'http:') location.href = "https://neondeathpact.com/";
+        if (location.protocol == 'http:') location.href = "https://neondeathpact.com/";
     </script>
 
     <script
@@ -44,7 +44,11 @@
                     <img src="assets/images/text_comingsoon-mobile.png" alt="Coming soon to Kickstarter. In development for XBOX ONE and Steam" class="coming-m">
                 </div>
                 <div class="subscribe">
-                    <a href="#" class="hex-button btn-subscribe"><input type="email" id="email" placeholder="enter your email address"><span class="outer"><span class="inner" data-text="Subscribe for occasional Neon news">Subscribe <span class="opt">for occasional Neon news</span></span></span></a>
+                    <form action="https://neondeathpact.us14.list-manage.com/subscribe/post-json?u=83dfbf244a8ddf0e5259a46ba&id=01a360d975&"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+                        novalidate>
+                        <a href="#" class="hex-button btn-subscribe"><input type="email" id="email" name="EMAIL" placeholder="enter your email address"><span class="outer"><span class="inner" data-text="Subscribe for occasional Neon news">Subscribe <span class="opt">for occasional Neon news</span></span></span></a>
+                    </form>
                     
                 </div>
             </div>
@@ -52,9 +56,6 @@
                 <!-- <a href="#" class="btn"><span>Press kit</span></a> -->
             </div>
         </div>
-        <!-- <img src="assets/images/buildings.png" alt="" class="bldgs"> -->
-        <!-- <img src="assets/images/bldgs-left.png" alt="" class="bldg-left">
-        <img src="assets/images/bldgs-right.png" alt="" class="bldg-right"> -->
         <div class="down"></div>
     </header>
     <a href="#" class="nav-toggle"><img src="assets/images/icon-menu.svg" alt=""></a>
@@ -275,6 +276,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js?v=1"></script>
 
