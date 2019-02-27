@@ -39,23 +39,6 @@ header {
         z-index: 0;
     }
         
-    .bldg-left, .bldg-right {
-        position: absolute;
-        z-index: 0;
-    }
-
-    .bldg-left {
-        max-width: 567px;
-        left: 0;
-        top: 380px;
-    }
-    
-    .bldg-right {
-        max-width: 465px;
-        right: 0;
-        top: 352px;
-    }
-
     .container {
         position: relative;
         display: grid;
@@ -64,6 +47,8 @@ header {
         // flex-flow: row nowrap;
         // justify-content: space-between;;
         z-index: 10;
+
+        background: url('../images/buildings.png') no-repeat center 300px / contain transparent;
     }
 
     .logo {
@@ -277,18 +262,6 @@ header {
     }
 
     @media only screen and (max-width: 800px) {        
-
-        .bldg-left {
-            width: 100%;
-            max-width: 100%;
-            top: 720px;
-            opacity: 0.6;
-        }
-
-        .bldg-right {
-            display: none;
-        }
-
         .title {
             &:before {
                 max-width: 300px;
@@ -305,6 +278,11 @@ header {
         height: auto;
         padding-bottom: 8rem;
         // overflow: visible;
+
+        .container {
+            background-size: 235% auto;
+            background-position: left 500px;
+        }
 
         .bldgs {
             width: 235vw;

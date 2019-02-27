@@ -42,10 +42,13 @@ img {
 
 body {
     width: 100vw;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: scroll;
 
     &.nav-open, &.lightbox-open {
         overflow: hidden;
     }
+}
+
+.ui-page {
+    overflow: hidden;
 }

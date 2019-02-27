@@ -492,11 +492,14 @@ img {
 
 body {
   width: 100vw;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: scroll;
 }
 
 body.nav-open, body.lightbox-open {
+  overflow: hidden;
+}
+
+.ui-page {
   overflow: hidden;
 }
 
@@ -656,23 +659,6 @@ header .bldgs {
   z-index: 0;
 }
 
-header .bldg-left, header .bldg-right {
-  position: absolute;
-  z-index: 0;
-}
-
-header .bldg-left {
-  max-width: 567px;
-  left: 0;
-  top: 380px;
-}
-
-header .bldg-right {
-  max-width: 465px;
-  right: 0;
-  top: 352px;
-}
-
 header .container {
   position: relative;
   display: -ms-grid;
@@ -681,6 +667,7 @@ header .container {
       grid-template-columns: 1fr 60% 1fr;
   grid-gap: 0;
   z-index: 10;
+  background: url("../images/buildings.png") no-repeat center 300px/contain transparent;
 }
 
 header .logo {
@@ -882,15 +869,6 @@ header .buttons .btn:hover {
 }
 
 @media only screen and (max-width: 800px) {
-  header .bldg-left {
-    width: 100%;
-    max-width: 100%;
-    top: 720px;
-    opacity: 0.6;
-  }
-  header .bldg-right {
-    display: none;
-  }
   header .title:before {
     max-width: 300px;
     max-height: 300px;
@@ -904,6 +882,10 @@ header .buttons .btn:hover {
   header {
     height: auto;
     padding-bottom: 8rem;
+  }
+  header .container {
+    background-size: 235% auto;
+    background-position: left 500px;
   }
   header .bldgs {
     width: 235vw;
@@ -1833,6 +1815,7 @@ footer .copyright {
     overflow: visible;
     position: relative;
     width: calc(100% - 4rem);
+    margin-top: 3rem;
   }
   .lightbox .caption p {
     max-width: 100%;
@@ -2976,6 +2959,12 @@ footer .copyright {
   }
   #gameplay .vids .vid-item {
     margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #gameplay .vids {
+    padding: 0 1.5rem;
   }
 }
 
