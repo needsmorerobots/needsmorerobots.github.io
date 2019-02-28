@@ -362,8 +362,8 @@
 
 #about {
     position: relative;
-    min-height: 60rem;
-    background:  url('../images/landing-bg.jpg') no-repeat center top / cover transparent;
+    min-height: 80rem;
+    background:  url('../images/landing-bg.jpg') no-repeat center / cover transparent;
 
     &:before {
         content: "";
