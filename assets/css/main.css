@@ -2287,8 +2287,8 @@ footer .copyright {
 
 #about {
   position: relative;
-  min-height: 60rem;
-  background: url("../images/landing-bg.jpg") no-repeat center top/cover transparent;
+  min-height: 80rem;
+  background: url("../images/landing-bg.jpg") no-repeat center/cover transparent;
 }
 
 #about:before {
@@ -2719,8 +2719,17 @@ footer .copyright {
   margin: 0;
 }
 
+#gameplay .grid .col .gallery a:hover img {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+}
+
 #gameplay .grid .col .gallery img {
   width: 100%;
+  -webkit-transition: all 0.5s cubic-bezier(0.01, 1.01, 0.35, 1);
+  transition: all 0.5s cubic-bezier(0.01, 1.01, 0.35, 1);
 }
 
 @media only screen and (max-width: 640px) {

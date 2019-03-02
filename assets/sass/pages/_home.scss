@@ -775,10 +775,18 @@
                         max-height: 0 !important;
                         margin: 0;
                     }
+
+                    &:hover {
+                        img {
+                            transform: scale(1.03);
+                            filter: brightness(1.5);
+                        }
+                    }
                 }
 
                 img {
                     width: 100%;
+                    transition: all 0.5s cubic-bezier(0.01, 1.01, 0.35, 1);
                 }
             }
 
