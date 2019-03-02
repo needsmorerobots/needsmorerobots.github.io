@@ -230,6 +230,12 @@
         padding-right: 1.5rem;
     }
 
+    .bg {
+        .bgi {
+            transition: all 2s cubic-bezier(0.01, 1.01, 0.35, 1);
+        }
+    }
+
     #cloud1, #cloud2, #cloud3, #whalebarque {
         position: absolute;
         pointer-events: none;
@@ -697,6 +703,18 @@
             .title {
                 position: relative;
 
+                &:hover {
+                    &:before {
+                        transform: rotate(45deg) scale(1.03);
+                    }
+
+                    &:after {
+                        transform: rotate(45deg) scale(1.15);
+                        top: -3rem;
+                        opacity: 1;
+                    }
+                }
+
                 &:before {
                     content: "";
                     position: absolute;
@@ -711,8 +729,9 @@
                     opacity: 1;
                     transform-origin: center;
                     z-index: 0;
+                    transition: all 0.15s ease-out;
                 }
-
+                
                 &:after {
                     content: "";
                     position: absolute;
@@ -726,6 +745,7 @@
                     opacity: 0.3;
                     transform-origin: center;
                     z-index: 1;
+                    transition: all 0.15s ease-out;
                 }
 
                 .text {

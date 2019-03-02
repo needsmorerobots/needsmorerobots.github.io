@@ -117,13 +117,16 @@
 
         function movebg() {
             if ($window.width() > 800) {
-                $('#about .bg img').each(function () {
-                    
+                $('.bg .bgi').each(function () {
+                   
                     var $elem = $(this),
+                        depth = typeof ($elem.data('depth')) == 'undefined' ? 0 : parseFloat($elem.data('depth')),
+                        offset = typeof ($elem.data('offset')) == 'undefined' ? 0 : parseInt($elem.data('offset')),
+                        scale = typeof ($elem.data('scale')) == 'undefined' ? 1 : parseFloat($elem.data('scale')),
+
                         ratio = $elem.offset().top - $window.scrollTop(),
-                        scale = parseFloat($elem.data('scale')),
+                        dy = ratio * depth + (offset * $window.height());
                         // offsetX = ((event.clientX - ($window.width() / 2)) / $window.width()) * 2,
-                        dy = ratio * $elem.data('depth') + ($elem.data('offset') * $window.height());
                         // dx = Math.floor($window.width() * ((scale - 1) * 0.9) / 2 * offsetX);
     
                     // $elem.css('transform', 'scale(' + scale + ') translate(' + dx + 'px, ' + dy + 'px)');

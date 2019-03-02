@@ -2151,6 +2151,11 @@ footer .copyright {
   padding-right: 1.5rem;
 }
 
+#intro .bg .bgi {
+  -webkit-transition: all 2s cubic-bezier(0.01, 1.01, 0.35, 1);
+  transition: all 2s cubic-bezier(0.01, 1.01, 0.35, 1);
+}
+
 #intro #cloud1, #intro #cloud2, #intro #cloud3, #intro #whalebarque {
   position: absolute;
   pointer-events: none;
@@ -2636,6 +2641,18 @@ footer .copyright {
   position: relative;
 }
 
+#gameplay .grid .col .title:hover:before {
+  -webkit-transform: rotate(45deg) scale(1.03);
+          transform: rotate(45deg) scale(1.03);
+}
+
+#gameplay .grid .col .title:hover:after {
+  -webkit-transform: rotate(45deg) scale(1.15);
+          transform: rotate(45deg) scale(1.15);
+  top: -3rem;
+  opacity: 1;
+}
+
 #gameplay .grid .col .title:before {
   content: "";
   position: absolute;
@@ -2653,6 +2670,8 @@ footer .copyright {
   -webkit-transform-origin: center;
           transform-origin: center;
   z-index: 0;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
 }
 
 #gameplay .grid .col .title:after {
@@ -2671,6 +2690,8 @@ footer .copyright {
   -webkit-transform-origin: center;
           transform-origin: center;
   z-index: 1;
+  -webkit-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
 }
 
 #gameplay .grid .col .title .text {
