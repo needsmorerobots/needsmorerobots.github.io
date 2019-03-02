@@ -366,6 +366,7 @@
     background:  url('../images/aboutback.jpg') no-repeat center / cover transparent;
 
     .bg {
+        overflow: hidden;
         position: absolute;
         width: 100%;
         height: 100%;
