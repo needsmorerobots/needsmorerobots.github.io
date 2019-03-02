@@ -98,11 +98,12 @@
     var Site = function () {
         var $window = $(window),
             $body = $("body"),
-            timer;
+            timer,
+            event;
 
         // Debounce functions
         var scrollWindow = debounce(scrollControl, 250),
-            scrollThrottle = throttle(scrollThrottle, 10),
+            scrollThrottle = throttle(scrollThrottle, 100),
             resizeWindow = debounce(resizeControl, 250);
 
         function scrollControl() { }
@@ -110,10 +111,24 @@
         function resizeControl() { }
 
         function scrollThrottle() {
-            if ($window.scrollTop() >= $('header').outerHeight() * 0.9) {
-                $('.bar').addClass('open');
-            } else {
-                $('.bar').removeClass('open');
+            // window.dispatchEvent(new Event('mousemove'));
+            movebg();
+        }
+
+        function movebg() {
+            if ($window.width() > 800) {
+                $('#about .bg img').each(function () {
+                    
+                    var $elem = $(this),
+                        ratio = $elem.offset().top - $window.scrollTop(),
+                        scale = parseFloat($elem.data('scale')),
+                        // offsetX = ((event.clientX - ($window.width() / 2)) / $window.width()) * 2,
+                        dy = ratio * $elem.data('depth') + ($elem.data('offset') * $window.height());
+                        // dx = Math.floor($window.width() * ((scale - 1) * 0.9) / 2 * offsetX);
+    
+                    // $elem.css('transform', 'scale(' + scale + ') translate(' + dx + 'px, ' + dy + 'px)');
+                    $elem.css('transform', 'scale(' + scale + ') translateY(' + dy + 'px)');
+                });
             }
         }
 
@@ -345,6 +360,11 @@
                 var mh = Math.round($('.gallery:first img:first').height());
                 $('.gallery a').css('max-height', mh + 'px');
             });
+
+            // $window.on("mousemove", function (e) {
+            //     event = e;
+            //     movebg();
+            // });
 
             // scroll control
             $window.on("scroll", function () {
