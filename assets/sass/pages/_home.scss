@@ -389,6 +389,10 @@
             object-fit: cover;
             object-position: center;
             transition: all 2s cubic-bezier(0.01, 1.01, 0.35, 1);
+
+            &:nth-child(2) {
+                top: 50px;
+            }
         }
     }
 

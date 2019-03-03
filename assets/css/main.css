@@ -2320,6 +2320,10 @@ footer .copyright {
   transition: all 2s cubic-bezier(0.01, 1.01, 0.35, 1);
 }
 
+#about .bg img:nth-child(2) {
+  top: 50px;
+}
+
 #about:before {
   content: "";
   position: absolute;
