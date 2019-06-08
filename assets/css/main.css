@@ -2120,11 +2120,29 @@ footer .copyright {
 
 #intro {
   position: relative;
-  padding: 20rem 0 12rem;
+  padding: 20rem 0 7rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffd5c4), to(#fffbc6));
   background: linear-gradient(to bottom, #ffd5c4 0%, #fffbc6 100%);
   text-align: center;
   z-index: 75;
+}
+
+#intro .iframe-container {
+  position: relative;
+  width: 800px;
+  height: 0;
+  padding-top: 56.25%;
+  max-width: calc(100% - 3rem);
+  margin: 5rem auto;
+}
+
+#intro .iframe-container iframe {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
 @media only screen and (max-width: 480px) {
