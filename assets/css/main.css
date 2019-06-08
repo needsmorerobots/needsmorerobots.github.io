@@ -2131,6 +2131,7 @@ footer .copyright {
   width: 800px;
   max-width: calc(100% - 3rem);
   margin: 5rem auto;
+  z-index: 100;
 }
 #intro .iframe-container {
   position: relative;
