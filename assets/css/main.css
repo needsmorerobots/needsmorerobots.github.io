@@ -2127,14 +2127,15 @@ footer .copyright {
   z-index: 75;
 }
 
+#intro .iframe-wrapper {
+  width: 800px;
+  max-width: calc(100% - 3rem);
+  margin: 5rem auto;
+}
 #intro .iframe-container {
   position: relative;
   padding-top: 56.25%;
   overflow: hidden;
-  width: 800px;
-  height: 450px;
-  max-width: calc(100% - 3rem);
-  margin: 5rem auto;
 }
 
 #intro .iframe-container iframe {
