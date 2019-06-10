@@ -2128,10 +2128,11 @@ footer .copyright {
 }
 
 #intro .iframe-wrapper {
-  width: 800px;
+  width: 900px;
   max-width: calc(100% - 3rem);
-  margin: 5rem auto;
+  margin: 10rem auto;
   z-index: 100;
+  box-shadow: 10px 10px 30px hsla(288, 69%, 11%, 0.5);
 }
 #intro .iframe-container {
   position: relative;
