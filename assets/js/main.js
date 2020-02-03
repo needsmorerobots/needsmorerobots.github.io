@@ -314,6 +314,12 @@
                 $('.caption p').html($('.carousel .slick-current').data('caption')).removeClass('hidden');
                 $('.count .curr').text(curr + 1);
             });
+            
+            $('.lightbox').on('click', function(e) {
+                if ($(e.target).hasClass('lightbox')) {
+                    $body.removeClass('lightbox-open');
+                }
+            });
 
             $('.lightbox .close').on('click', function (e) {
                 e.preventDefault();
